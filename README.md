@@ -1,96 +1,111 @@
 # 🚀 FinAI: Autonomous Financial Intelligence Platform
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+Demo Video : https://drive.google.com/file/d/1wfllt3l_5gg4HHvfiOJ3UwxQdg-ivbxw/view?usp=sharing
+
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![TypeScript](https://img.shields.io/badge/typescript-5.0+-blue.svg)
 ![LangGraph](https://img.shields.io/badge/LangGraph-Agentic-orange)
 ![RAG](https://img.shields.io/badge/RAG-ChromaDB-green)
 
-**FinAI** is a next-generation, local-first financial intelligence system that uses a multi-agent architecture to filter noise, analyze sentiment, and predict market impacts in real-time. Unlike traditional dashboards, FinAI employs **autonomous agents** to read, reason, and react to global financial events.
+**FinAI** is a cutting-edge, local-first financial intelligence system designed to democratize institutional-grade market analysis. By leveraging a multi-agent architecture, FinAI filters noise, analyzes sentiment, and models complex second-order effects in real-time.
+
+Unlike traditional dashboards that simply display data, FinAI employs **autonomous agents** to read, reason, and react to global financial events, offering capabilities previously reserved for top-tier hedge funds.
 
 ---
 
-## 🧠 Core Architecture & Technologies
+## 🌟 Key Features & "Moonshot" Modules
 
-This project showcases advanced implementations of **Agentic AI**, **RAG**, and **NLP**.
+FinAI integrates advanced "Moonshot" modules that push the boundaries of retail financial analytics:
 
-### 1. Agentic Workflow with [LangGraph](https://github.com/langchain-ai/langgraph)
-FinAI moves beyond simple linear chains. It uses a **cyclic state graph** to orchestrate specialized agents.
-*   **State Management**: A shared `AgentState` tracks news items, deduplication flags, extracted entities, and sentiment scores across the graph.
-*   **Conditional Routing**: The graph dynamically decides the next step (e.g., if a news item is a duplicate, it skips to the end; otherwise, it proceeds to entity extraction).
-*   **Nodes**:
-    *   `dedup`: Checks for redundant news using fuzzy matching.
-    *   `entity`: Extracts tickers (e.g., $AAPL, $TSLA) and organizations.
-    *   `impact`: Analyzes sentiment and assigns a "Market Impact Score" (0-100).
-    *   `trader`: Simulates trade decisions based on aggregated signals.
+### 🕵️‍♂️ Forensic Agent (Anomaly Detection)
+*   **Real-time Scanning**: Continuously monitors market data for statistical anomalies and irregularities.
+*   **Deep Dive Analysis**: Automatically triggers a sub-agent investigation when unusual volume or price action is detected.
 
-### 2. Local RAG (Retrieval-Augmented Generation)
-A fully local, privacy-preserving RAG pipeline that allows users to "chat" with the market.
-*   **Vector Database**: **ChromaDB** stores news embeddings locally.
-*   **Embeddings**: Uses `sentence-transformers/all-MiniLM-L6-v2` for high-speed, dense vector representations of financial news.
-*   **LLM**: Integrates `google/flan-t5-base` (via Hugging Face Transformers) for on-device answer generation without API costs.
-*   **Pipeline**:
-    1.  **Ingest**: News is chunked, embedded, and indexed in real-time.
-    2.  **Retrieve**: User queries are embedded to find the top-k most relevant news snippets.
-    3.  **Generate**: The LLM synthesizes an answer based *only* on the retrieved context, reducing hallucinations.
+### 🦋 Butterfly Effect Engine (Causal Graph)
+*   **Second-Order Effects**: Models complex causal chains (e.g., "Drought in Brazil" -> "Coffee Futures Spike" -> "Starbucks Margin Compression").
+*   **Graph Analytics**: Uses directed graphs to visualize and predict how a single event ripples through the global economy.
 
-### 3. Advanced NLP & Forensics
-*   **Sentiment Analysis**: Uses transformer-based models to detect subtle shifts in market tone.
-*   **Fed Whisperer (Audio)**: *[In Development]* Uses `openai-whisper` and `librosa` to transcribe and analyze audio from Federal Reserve announcements for hawkish/dovish signals.
-*   **Causal Graph**: Models second-order effects (e.g., "Oil price spike" -> "Airline stocks drop").
+### 🧬 Darwinian Breeder (Strategy Evolution)
+*   **Genetic Algorithms**: Evolving trading strategies using principles of natural selection.
+*   **Survival of the Fittest**: Automatically backtests thousands of strategy variations, keeping only the most robust performers.
+
+### 🌌 Multiverse Simulator (Counterfactuals)
+*   **"What If" Scenarios**: Runs Monte Carlo simulations to test portfolios against hypothetical historical divergences.
+*   **Stress Testing**: Evaluates how your holdings would perform during a 2008-style crash or a 1999-style melt-up.
+
+### 🗣️ Fed Whisperer (Audio Analysis)
+*   **Tone Detection**: Uses `openai-whisper` and `librosa` to analyze the *audio* of Federal Reserve announcements, detecting subtle hawkish or dovish cues in speech patterns and tonality.
+*   **Sentiment Scoring**: Quantifies the emotional weight of central bank communications.
+
+### 🧠 Local RAG (Retrieval-Augmented Generation)
+*   **Privacy-First**: Runs entirely on your local machine using **ChromaDB** and **Hugging Face Transformers**.
+*   **Smart Search**: Chat with the market using natural language. The system retrieves relevant news snippets to answer complex queries without hallucinations.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technical Architecture
+
+FinAI is built on a modern, modular stack designed for performance and extensibility.
 
 ### Backend (Python)
 *   **Framework**: FastAPI (High-performance async API)
-*   **Orchestration**: LangChain & LangGraph
-*   **ML/AI**: PyTorch, Transformers, Sentence-Transformers, Scikit-learn
-*   **Database**: ChromaDB (Vector), SQLite (Relational)
-*   **Scheduling**: APScheduler
+*   **Orchestration**: **LangGraph** (Cyclic stateful multi-agent workflows)
+*   **AI/ML**: PyTorch, Transformers, Sentence-Transformers, Scikit-learn
+*   **Vector Store**: ChromaDB (Local persistence for RAG)
+*   **Audio Processing**: OpenAI Whisper, Librosa
+*   **Scheduling**: APScheduler for periodic agent tasks
 
 ### Frontend (TypeScript)
-*   **Framework**: React (Vite)
-*   **Styling**: Tailwind CSS (Dark mode, Glassmorphism)
-*   **Visualization**: Recharts (Interactive financial charts), Lucide React
-*   **State**: React Hooks
+*   **Framework**: React 18 (Vite)
+*   **Styling**: Tailwind CSS (Custom "FinAI" design system with glassmorphism)
+*   **State Management**: React Hooks & Context
+*   **Visualization**: Recharts (Interactive financial charting)
+*   **Icons**: Lucide React
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Getting Started
+
+Follow these instructions to set up the FinAI environment locally.
 
 ### Prerequisites
-*   Python 3.10+
-*   Node.js 18+
+*   **Python 3.10+**
+*   **Node.js 18+**
+*   **Git**
 
 ### 1. Backend Setup
+
 ```bash
+# Navigate to the backend directory
 cd finai-lite/backend
 
-# Create virtual environment
+# Create a virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
-# Install dependencies (including torch, transformers, langgraph)
+# Install dependencies
+# This includes torch, transformers, langgraph, fastapi, etc.
 pip install -r requirements.txt
 
 # Run the Agent Server
+# The server initializes local RAG models on startup (first run may take a few minutes)
 uvicorn app.main:app --reload
 ```
-*The server will start at `http://localhost:8000` and initialize the local RAG models (first run may take a minute).*
+*Backend API will be available at `http://localhost:8000`*
 
 ### 2. Frontend Setup
+
 ```bash
+# Open a new terminal and navigate to the frontend directory
 cd finai-lite/frontend
 
-# Install dependencies
+# Install Node dependencies
 npm install
 
-# Start the UI
+# Start the Development Server
 npm run dev
 ```
-*Access the dashboard at `http://localhost:5173`.*
+*Frontend Dashboard will be available at `http://localhost:5173`*
 
 ---
 
@@ -100,32 +115,39 @@ npm run dev
 finai-lite/
 ├── backend/
 │   ├── app/
-│   │   ├── agents/         # LangGraph nodes & workflow definitions
-│   │   ├── services/       # RAG, FedWhisperer, Market Data services
-│   │   ├── api/            # FastAPI routes
-│   │   └── core/           # Database & Config
-│   ├── chroma_db/          # Local vector store persistence
-│   └── requirements.txt
+│   │   ├── agents/         # LangGraph nodes (Trader, Forensic, Macro)
+│   │   ├── services/       # Core Logic (Butterfly Effect, Breeder, RAG)
+│   │   ├── api/            # FastAPI Routes & Endpoints
+│   │   └── core/           # Config, Database, & Utilities
+│   ├── chroma_db/          # Local Vector Database Storage
+│   └── requirements.txt    # Python Dependencies
 ├── frontend/
 │   ├── src/
-│   │   ├── components/     # React components (Charts, Feeds)
-│   │   ├── pages/          # Main views (Dashboard, Simulator, Forensic)
-│   │   └── lib/            # API clients
-└── README.md
+│   │   ├── components/     # Reusable UI Components
+│   │   ├── pages/          # Application Views (Insights, Simulator, etc.)
+│   │   └── lib/            # API Clients & Utilities
+│   └── package.json        # Frontend Dependencies
+└── README.md               # Project Documentation
 ```
+
+---
 
 ## 🔮 Roadmap
 
-*   **Multiverse Simulator**: Monte Carlo simulations for portfolio stress testing.
-*   **Darwinian Breeder**: Genetic algorithms to evolve trading strategies over time.
-*   **Social Sentiment**: Integration with Twitter/X and Reddit APIs.
+*   **Social Sentiment Integration**: Real-time scraping of Twitter/X and Reddit (WallStreetBets) to gauge retail sentiment.
+*   **Live Broker Connection**: API integrations with Alpaca or Interactive Brokers for paper trading.
+*   **LLM Fine-tuning**: Tools to fine-tune small local models (like Llama 3) on financial datasets.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read `DOCUMENTATION.md` for detailed architectural guidelines.
+We welcome contributions! Whether it's fixing bugs, adding new "Moonshot" modules, or improving the UI, please feel free to fork the repository and submit a Pull Request.
 
-## 📄 License
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-MIT License
+
