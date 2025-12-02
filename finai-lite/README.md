@@ -1,54 +1,37 @@
-# FinAI Lite
+# 🚀 FinAI Lite
 
-A multi-agent AI dashboard that helps traders filter noise from financial news.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![TypeScript](https://img.shields.io/badge/typescript-5.0+-blue.svg)
 
-## Tech Stack
+This is the core implementation of the FinAI platform.
 
-- **Frontend**: React (Vite), TypeScript, Tailwind CSS, Lucide React, Recharts
-- **Backend**: Python (FastAPI)
-- **AI**: LangGraph, LangChain
-- **Database**: SQLite, ChromaDB
+## ⚡ Quick Start
 
-## Setup & Run
+### 1. Backend Setup
+```bash
+cd backend
 
-### Backend
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-1. Navigate to `backend` folder:
-   ```bash
-   cd backend
-   ```
-2. Create virtual environment (optional but recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Run the server:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
+# Install dependencies
+pip install -r requirements.txt
 
-### Frontend
+# Run the Agent Server
+uvicorn app.main:app --reload
+```
 
-1. Navigate to `frontend` folder:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
+### 2. Frontend Setup
+```bash
+cd frontend
 
-## Features
+# Install dependencies
+npm install
 
-- **Live Intelligence Feed**: Real-time financial news updates.
-- **Impact Analysis**: AI-driven sentiment scoring and market impact labeling.
-- **RAG Chat**: Ask questions about the market and get answers based on recent news.
-- **Impact Velocity**: Visual trend of market sentiment.
+# Start the UI
+npm run dev
+```
+
+For full documentation, architecture details, and roadmap, please refer to the [Root README](../README.md).
